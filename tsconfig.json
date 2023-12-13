@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "app/(auth)/(routes)/sign-up/[[...index]].js", "app/(auth)/(routes)/sign-up/page.js", "app/(auth)/(routes)/sign-in/[[...sign-in]]/page.js", "app/(auth)/(routes)/sign-up/[[...sign-up]]/page.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
