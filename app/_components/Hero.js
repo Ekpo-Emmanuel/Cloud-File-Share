@@ -1,44 +1,14 @@
 import React from 'react'
 import Constant from '../_utils/Constant'
 
+/**
+ * Renders the Hero component.
+ *
+ * @return {JSX.Element} The rendered Hero component.
+ */
 function Hero() {
   return (
   <>
-    {/* <section class="bg-white">
-      <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex ">
-          <div class="mx-auto max-w-xl text-center">
-            <h1 class="text-3xl font-extrabold sm:text-5xl">
-              <span class='text-primary'>Upload, Save</span> and easily <span class='text-primary'>share </span> your files in One place
-            </h1>
-
-            <p class="mt-4 sm:text-xl/relaxed text-grey-500">
-              {Constant.desc}
-            </p>
-
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <a
-                class="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue focus:outline-none focus:ring active:bg-primary sm:w-auto"
-                href="/get-started"
-                >
-                Get Started
-                </a>
-
-                <a
-                class="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-primary focus:outline-none focus:ring active:text-primary sm:w-auto"
-                href="/about"
-                >
-                Learn More
-                </a>
-            </div>
-            <div className='mt-8 flex justify-center'>
-              <img src="/icons/firebase.svg" height={30} width={30}  class='m-4 mt-0 mb-0'/>
-              <img src="/icons/react.svg" height={40} width={40}  class='m-4 mt-0 mb-0'/>
-              <img src="/icons/tailwind.svg" height={40} width={40}  class='m-4 mt-0 mb-0'/>
-              <img src="/icons/clerk.svg" height={80} width={80}  class='m-4 mt-0 mb-0'/>
-            </div>
-          </div>
-      </div>
-    </section> */}
     <section class="bg-white mx-auto max-w-screen-xl mt-0 sm:mt-28 px-4 py-16 lg:flex ">
       <div class="text-left">
         <div class='sm:px-28'>

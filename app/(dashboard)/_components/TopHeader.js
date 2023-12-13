@@ -7,6 +7,12 @@ import Image from 'next/image';
 import { useUser } from "@clerk/nextjs";
 
 
+/**
+ * Renders the top header component.
+ *
+ * @param {Object} toggleSidebar - A function to toggle the sidebar.
+ * @return {JSX.Element} The rendered top header component.
+ */
 function TopHeader({toggleSidebar}) {
   const { isSignedIn, user } = useUser();
 

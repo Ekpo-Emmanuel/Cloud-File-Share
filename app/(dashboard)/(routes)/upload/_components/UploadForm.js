@@ -2,72 +2,82 @@ import React from 'react'
 import AlertMsg from './AlertMsg'
 import Filepreview from './Filepreview'
 
+/**
+ * Handles the event when a file is selected.
+ *
+ * @param {object} event - The event object that contains information about the file selection.
+ * @return {undefined} This function does not return a value.
+ */
 function UploadForm({uploadBtnClick}) {
   const [file, setFile] = React.useState();
   const [error, setError] = React.useState();
   const [fileType, setFileType] = React.useState();
 
+  /**
+   * Handles the event when a file is selected.
+   *
+   * @param {object} event - The event object that contains information about the file selection.
+   * @return {undefined} This function does not return a value.
+   */
   const onFileSelect = (event) => {
     const selectedFile = event.target.files[0];
     
-
     if(selectedFile && selectedFile.size > 8000000) {
         setError('Maximum file size is 8 MB');
     }
     else {
+      setError(null);
+      const getFileExtension = selectedFile.name.split('.');
+      const fileExtension = getFileExtension.length > 1 ? getFileExtension[getFileExtension.length - 1].toLowerCase() : '';
 
-    setError(null);
-    const getFileExtension = selectedFile.name.split('.');
-    const fileExtension = getFileExtension.length > 1 ? getFileExtension[getFileExtension.length - 1].toLowerCase() : '';
+      switch (fileExtension) {
+          case 'pdf':
+          case 'docx':
+          case 'ppt':
+          case 'pptx':
+          case 'xls':
+          case 'xlsx':
+          case 'txt':
+            setFileType('pdf');
+            break;
+          case 'png':
+          case 'jpg':
+          case 'jpeg':
+            setFileType('image');
+            break;
+          case 'svg':
+          case 'webp':
+          case 'webm':
+            setFileType('svg');
+            break;
+          case 'zip':
+              setFileType('zip');
+          break;
+          case 'html':
+          case 'htm':
+          case 'css':
+          case 'js':
+          case 'ts':
+          case 'ts':
+          case 'py':
+          case 'rb':
+          case 'java':
+          case 'c':
+          case 'cpp':
+          case 'go':
+          case 'php':
+          case 'swift':
+          case 'kotlin':
+          case 'dart':
+              setFileType('code');
+          break;
+          default:
+            setFileType(null);
+            break;
+        }
 
-    switch (fileExtension) {
-        case 'pdf':
-        case 'docx':
-        case 'ppt':
-        case 'pptx':
-        case 'xls':
-        case 'xlsx':
-        case 'txt':
-          setFileType('pdf');
-          break;
-        case 'png':
-        case 'jpg':
-        case 'jpeg':
-          setFileType('image');
-          break;
-        case 'svg':
-        case 'webp':
-        case 'webm':
-          setFileType('svg');
-          break;
-        case 'zip':
-            setFileType('zip');
-        break;
-        case 'html':
-        case 'htm':
-        case 'css':
-        case 'js':
-        case 'ts':
-        case 'ts':
-        case 'py':
-        case 'rb':
-        case 'java':
-        case 'c':
-        case 'cpp':
-        case 'go':
-        case 'php':
-        case 'swift':
-        case 'kotlin':
-        case 'dart':
-            setFileType('code');
-        break;
-        default:
-          setFileType(null);
-          break;
-      }
-
-    setFile(event.target.files[0]);
-    // console.log(selectedFile.name);
+      setFile(event.target.files[0]);
+      // console.log(selectedFile.name);
     }
   };
   return (

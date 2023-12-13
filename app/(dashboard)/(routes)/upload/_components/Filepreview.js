@@ -2,6 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 import {FileText, X, FileImage, ShieldQuestion, FileArchive, FileCode } from 'lucide-react'
 
+/**
+ * Renders a file preview component.
+ *
+ * @param {Object} file - The file object to be previewed.
+ * @param {function} removeFile - The function to remove the file.
+ * @param {string} fileType - The type of the file.
+ * @return {JSX.Element} The file preview component.
+ */
 function Filepreview({file, removeFile, fileType}) {
   let content ;
 

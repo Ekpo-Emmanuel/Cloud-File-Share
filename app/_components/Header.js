@@ -1,8 +1,11 @@
-// "use client"
 import Image from 'next/image'
 import React from 'react'
-import Link from 'next/link'
 
+/**
+ * Renders the header component.
+ *
+ * @return {JSX.Element} The JSX element representing the header component.
+ */
 function Header() {
 
   return (

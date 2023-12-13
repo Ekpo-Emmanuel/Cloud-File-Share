@@ -1,6 +1,11 @@
 import React from 'react'
 
 
+/**
+ * Renders the upgrade component.
+ *
+ * @return {JSX.Element} The rendered upgrade component.
+ */
 function Upgrade() {
   return (
     <div>

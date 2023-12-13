@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { Plus } from 'lucide-react';
 
 
+/**
+ * Renders an empty state component.
+ *
+ * @return {JSX.Element} The rendered empty state component.
+ */
 const Empty = () => (
 
 <div class="bg-white mt-10 divide-y divide-gray-200">

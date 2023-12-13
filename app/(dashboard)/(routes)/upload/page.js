@@ -8,6 +8,12 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/
 
 
 
+/**
+ * Uploads a file to Firebase storage.
+ *
+ * @param {File} file - The file to be uploaded.
+ * @return {void}
+ */
 const Upload = () => {
   const firebaseConfig = {
     storageBucket: 'file-share-app-5b54a.appspot.com'
@@ -16,6 +22,12 @@ const Upload = () => {
   const app = initializeApp(firebaseConfig);
   const storage = getStorage(app);
 
+  /**
+   * Uploads a file to the server.
+   *
+   * @param {object} file - The file to be uploaded.
+   * @return {void}
+   */
   const uploadFIle = (file) => {
     const metadata = {
       contentType: file.type

@@ -7,6 +7,7 @@ import Constant from "../../../_utils/Constant";
 import { useState, useEffect } from "react";
 
  
+
 export default function Page() {
   const { isLoaded, signIn, setActive } = useSignIn();
   const [emailAddress, setEmailAddress] = useState("");
@@ -33,7 +34,8 @@ export default function Page() {
           if (result.status === "complete") {
             await setActive({ session: result.createdSessionId });
             router.push("/files");
-          } else {
+          } 
+          else {
             console.log(result);
           }
         } catch (err) {

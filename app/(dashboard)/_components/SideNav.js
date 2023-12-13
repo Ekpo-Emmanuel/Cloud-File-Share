@@ -10,6 +10,11 @@ import {React, useState} from 'react'
 import { useUser } from "@clerk/nextjs";
 import Link from 'next/link';
 
+/**
+ * Renders the side navigation bar component.
+ *
+ * @return {JSX.Element} The JSX element representing the side navigation bar.
+ */
 function SideNav() {
     const { isSignedIn, user } = useUser();
     const menuList = [
