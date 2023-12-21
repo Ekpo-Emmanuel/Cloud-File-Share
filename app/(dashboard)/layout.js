@@ -17,7 +17,7 @@ function layout({children}) {
       <div className={`h-full md:w-64 fixed top-0 inset-y-0 z-50 ${isSidebarOpen ? 'md:block' : 'hidden'}`}>
         <SideNav />
       </div>
-      <div class={`md:ml-64 ${isSidebarOpen ? 'ml-0' : ''}`}>
+      <div className={`md:ml-64 ${isSidebarOpen ? 'ml-0' : ''}`}>
         <TopHeader toggleSidebar={toggleSidebar} />
         {children}
       </div>

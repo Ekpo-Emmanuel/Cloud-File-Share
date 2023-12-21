@@ -1,6 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter, Outfit } from 'next/font/google'
 import './globals.css'
+import Header from "./_components/Header";
 
 const inter = Outfit({ subsets: ['latin'] })
 
@@ -16,10 +17,12 @@ export const metadata = {
  * @return {JSX.Element} The root layout component.
  */
 export default function RootLayout({ children }) {
+
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
+          <Header />
           {children}
           </body>
       </html>

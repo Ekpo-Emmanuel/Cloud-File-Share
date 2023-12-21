@@ -10,7 +10,7 @@ import { Plus } from 'lucide-react';
  */
 const Empty = () => (
 
-<div class="bg-white mt-10 divide-y divide-gray-200">
+<div class="bg-white mt-[6.5rem] divide-y divide-gray-200">
     <div class="w-full text-center mx-auto py-12" colspan="5">
       <img class="w-32 h-32 mx-auto" src="https://res.cloudinary.com/daqsjyrgg/image/upload/v1690261234/di7tvpnzsesyo7vvsrq4.svg" alt="image empty states" />
       <p class="text-gray-700 font-medium text-lg text-center">Start organizing your files</p>
