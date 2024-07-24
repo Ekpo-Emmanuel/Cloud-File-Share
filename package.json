@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.27.5",
-    "firebase": "^10.7.1",
+    "@kinde-oss/kinde-auth-nextjs": "^2.3.5",
+    "firebase": "^10.12.4",
     "lucide-react": "^0.294.0",
-    "next": "14.0.4",
+    "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18"
   },
