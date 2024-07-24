@@ -24,7 +24,7 @@ function Hero() {
                           Upload, Save and easily share your files in One place
                         </p>
                         <p class="max-w-xl mt-4 text-base tracking-tight text-gray-600">
-                          {Constant.desc}
+                          {/* {Constant.desc} */}
                         </p>
                       </div>
                       <div class="block justify-center gap-3 mt-10 lg:justify-start sm:flex">

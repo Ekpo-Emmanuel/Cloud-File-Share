@@ -7,19 +7,13 @@ import Image from 'next/image';
 import { useUser } from "@clerk/nextjs";
 
 
-/**
- * Renders the top header component.
- *
- * @param {Object} toggleSidebar - A function to toggle the sidebar.
- * @return {JSX.Element} The rendered top header component.
- */
 function TopHeader({toggleSidebar}) {
-  const { isSignedIn, user } = useUser();
+  // const { isSignedIn, user } = useUser();
 
   return (
     <div className='flex p-5 border-b items-center justify-between 
     md:justify-end'>
-        <div class='md:hidden' onClick={toggleSidebar}>
+        {/* <div class='md:hidden' onClick={toggleSidebar}>
             <Menu/>
         </div>
         <Image src='/logo.svg' alt='logo' width={80} height={50}  class='md:hidden'/>
@@ -30,7 +24,7 @@ function TopHeader({toggleSidebar}) {
                     <strong class="font-medium sm:block">{isSignedIn ? <UserButton afterSignOutUrl="/"/> : ''}</strong>
                     </p>
                 </div>
-            </div>
+            </div> */}
     </div>
   )
 }

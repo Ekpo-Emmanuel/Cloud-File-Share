@@ -1,12 +1,28 @@
+
+'use client';
+
+import { useUserSession } from '../../hooks/use-user-session';
+import { signInWithGoogle, signOutWithGoogle } from '../../libs/firebase/auth';
+import { createSession, removeSession } from '../../actions/auth-actions';
 import Image from 'next/image'
 import React from 'react'
 
-/**
- * Renders the header component.
- *
- * @return {JSX.Element} The JSX element representing the header component.
- */
-function Header() {
+function Header({ session }) {
+    const userSessionId = useUserSession(session);
+
+    const handleSignIn = async () => {
+      const userUid = await signInWithGoogle();
+      if (userUid) {
+        await createSession(userUid);
+      }
+    };
+  
+    const handleSignOut = async () => {
+      await signOutWithGoogle();
+      await removeSession();
+    };
+
+
 
   return (
     <>
@@ -35,11 +51,19 @@ function Header() {
             </div>
 
             <div class="flex items-center gap-4">
-                <div class="sm:flex sm:gap-4">
-                    <a class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white" href="/files" >
-                        Get Started
-                    </a>
-                </div>
+                {userSessionId ? (
+                    <div onClick={handleSignOut} class="sm:flex sm:gap-4">
+                        <div class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white" >
+                        Sign Out
+                        </div>
+                    </div>
+                ): (
+                    <div onClick={handleSignIn} class="sm:flex sm:gap-4">
+                        <div class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white" >
+                        Sign In
+                        </div>
+                    </div>
+                )}
 
                 <div class="block md:hidden">
                     <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">

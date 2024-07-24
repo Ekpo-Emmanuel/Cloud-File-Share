@@ -10,13 +10,8 @@ import {React, useState} from 'react'
 import { useUser } from "@clerk/nextjs";
 import Link from 'next/link';
 
-/**
- * Renders the side navigation bar component.
- *
- * @return {JSX.Element} The JSX element representing the side navigation bar.
- */
 function SideNav() {
-    const { isSignedIn, user } = useUser();
+    // const { isSignedIn, user } = useUser();
     const menuList = [
         {
             id: 1,
@@ -41,7 +36,7 @@ function SideNav() {
 
   return (
     <div class="flex h-screen flex-col justify-between border-e bg-white">
-        <div class="px-0 py-6 md:px-4">
+        {/* <div class="px-0 py-6 md:px-4">
             <div class='px-4'>
                 <Image src="/logo.svg" alt="logo" width={80} height={50}/>
             </div>
@@ -58,11 +53,6 @@ function SideNav() {
                         <span >{item.name}</span>
                     </button>
                     </Link>
-
-                    {/* <a href={item.path} class="flex gap-2 p-4 rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 ">
-                        <span>{item.icon && <item.icon />}</span>
-                        <span>{item.name}</span>
-                    </a> */}
                    </li>
                 ))}
             </ul>
@@ -76,7 +66,7 @@ function SideNav() {
                     </p>
                 </div>
             </div>
-        </div>
+        </div> */}
     </div>        
   )
 }
