@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "../.."
-		},
-		{
-			"path": "../../../../../../.Trash/(auth)"
-		},
-		{
-			"path": "../../../../../../.Trash/_utils"
 		}
 	],
 	"settings": {}
