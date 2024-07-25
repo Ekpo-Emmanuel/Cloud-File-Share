@@ -2,6 +2,7 @@
 'use client';
 
 import { useUserSession } from '../../hooks/use-user-session';
+import { useAuth } from '../../contexts/AuthContext';
 import { signInWithGoogle, signOutWithGoogle } from '../../libs/firebase/auth';
 import { createSession, removeSession } from '../../actions/auth-actions';
 import Image from 'next/image'
@@ -9,6 +10,7 @@ import React from 'react'
 
 function Header({ session }) {
     const userSessionId = useUserSession(session);
+    const { user } = useAuth();
 
     const handleSignIn = async () => {
       const userUid = await signInWithGoogle();
@@ -21,7 +23,6 @@ function Header({ session }) {
       await signOutWithGoogle();
       await removeSession();
     };
-
 
 
   return (
@@ -51,7 +52,7 @@ function Header({ session }) {
             </div>
 
             <div class="flex items-center gap-4">
-                {userSessionId ? (
+                {user ? (
                     <div onClick={handleSignOut} class="sm:flex sm:gap-4">
                         <div class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white" >
                         Sign Out
